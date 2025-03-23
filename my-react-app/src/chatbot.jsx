@@ -5,11 +5,11 @@ const askQuestion = async (query) => {
   try {
     const temp = {
       "model" : "llama3.2",
-      "prompt" : "what is a dog",
+      "prompt" : query,
       "stream" : false
     }
     console.log("Sending request to API...");
-    const response = await fetch("http://127.0.0.1:1434/api/generate", {
+    const response = await fetch("http://127.0.0.1:11434/api/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify( temp ),
